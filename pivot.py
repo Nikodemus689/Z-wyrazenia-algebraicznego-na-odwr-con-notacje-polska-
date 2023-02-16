@@ -43,12 +43,14 @@ while i < len(t):
     elif t[i] == "/":
         dziel(t, i)
         i += 2
-    elif t[i] == '+' and t[i + 2] == "*" or t[i + 2] == '/':
-        dodzaw(t, i)
-        i += 4
-    elif t[i] == '-' and t[i + 2] == "*" or t[i + 2] == '/':
-        odezaw(t, i)
-        i += 4
+    elif t[i] == '+' and i+2<len(t)-1: 
+        if t[i + 2] == "*" or t[i + 2] == '/':
+            dodzaw(t, i)
+            i += 4
+    elif t[i] == '-' and i+2<len(t)-1:
+        if t[i + 2] == "*" or t[i + 2] == '/':
+            odezaw(t, i)
+            i += 4
     elif t[i] == "+":
         dod(t, i)
         i += 2
